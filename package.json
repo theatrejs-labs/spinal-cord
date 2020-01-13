@@ -1,12 +1,16 @@
 {
-  "name": "@spinal/cord",
+  "name": "@spinal/cli",
   "version": "0.1.0",
   "description": "",
+  "bin": {
+    "spinal": "./lib/index.js"
+  },
   "main": "lib/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "./node_modules/.bin/tsc -p ./tsconfig.json",
+    "build:watch": "./node_modules/.bin/tsc -p ./tsconfig.json -w",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepublish": "npm test && npm run lint && npm run build",
@@ -21,13 +25,14 @@
     "v:major": "npm version major --force"
   },
   "repository": "",
-  "author": "TheaterJS Oy <hello@theaterjs.com>",
+  "author": "Alireza Sheikholmolouki",
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@types/jest": "^24.0.15",
+    "babel-core": "^6.26.3",
     "babel-loader": "7.1.4",
     "css-loader": "^2.1.1",
     "gh-pages": "^2.0.1",
@@ -45,6 +50,9 @@
     "webpack-dev-server": "^3.7.1"
   },
   "dependencies": {
+    "@types/express": "^4.17.2",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
     "immer": "^5.2.1",
     "redux": "^4.0.5"
   }

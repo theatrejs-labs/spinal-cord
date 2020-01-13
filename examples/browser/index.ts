@@ -1,3 +1,3 @@
-import pack from '../../src'
+import { theatre } from './ignore-this'
 
-pack()
+console.log(theatre)
