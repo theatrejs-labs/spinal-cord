@@ -1,3 +1,1 @@
-import pack from '../../src'
-
-pack()
+import '../../src/'

@@ -1,6 +1,6 @@
 {
-    "watch": ["examples/node", "src"],
-    "ext": "ts",
-    "ignore": [],
-    "exec": "ts-node ./examples/node/index.ts"
-  }
+  "watch": ["examples/node", "src/**/*"],
+  "ext": "ts",
+  "ignore": [],
+  "exec": "ts-node --files ./examples/node/index.ts"
+}
