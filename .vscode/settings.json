@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    "node_modules": true,
+    "dist": true,
+    ".*": true,
+    "package.json": false,
+    "yarn.lock": true,
+    "tsconfig.json": true
+  },
+  "explorerExclude.backup": null
+}
