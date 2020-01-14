@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "node ./dist/bin/www",
-    "dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/bin/www.ts",
+    "dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node --files' src/bin/www.ts",
     "build": "./node_modules/typescript/bin/tsc"
   },
   "dependencies": {
