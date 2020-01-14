@@ -1,4 +1,4 @@
-import { mkdirSync, writeFileSync, readdirSync } from "fs"
+import { mkdirSync, writeFileSync, readdirSync, readFileSync } from "fs"
 import { resolve } from "path"
 
 export const createDirectoryIfNotExistSync = (path: string) => {
@@ -27,4 +27,9 @@ export const exportAllStores = (rootPath: string) => {
     resolve(rootPath, "index.js"),
     `${imports.join("\n")}\n\nmodule.exports = { ${allStores.join(", ")} }`
   )
+}
+
+export const readJSONFile = (path: string) => {
+  const content = readFileSync(path, { encoding: "utf-8" })
+  return JSON.parse(content)
 }
