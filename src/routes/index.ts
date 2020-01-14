@@ -1,4 +1,5 @@
 import { Router } from "express"
+import { config } from "../utils/configImporter"
 
 const router = Router()
 
