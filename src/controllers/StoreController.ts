@@ -1,12 +1,16 @@
-import config from "../utils/configImporter"
-import { createDirectoryIfNotExistSync } from "../utils/fileSystem"
-import { resolve } from "path"
-
-const { options, root } = config
+import { getSubDirectory } from "../utils/configImporter"
+import {
+  createDirectoryIfNotExistSync,
+  createOrUpdateFileSync,
+  exportAllStores
+} from "../utils/fileSystem"
 
 class StoreController {
-  saveState(store: string) {
-    console.log(store, root)
+  saveState(store: string, data: any) {
+    const storeDir = getSubDirectory(store)
+    createDirectoryIfNotExistSync(storeDir)
+    createOrUpdateFileSync(storeDir, "data.json", JSON.stringify(data))
+    exportAllStores()
   }
 }
 

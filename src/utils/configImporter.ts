@@ -28,4 +28,6 @@ function extractConfig() {
   createDirectoryIfNotExistSync(config.root)
 }
 
+export const getSubDirectory = (path: string) => resolve(config.root, path)
+
 export default config

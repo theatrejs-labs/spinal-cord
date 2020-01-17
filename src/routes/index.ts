@@ -5,7 +5,8 @@ const router = Router()
 
 router.post("/state/:store", (req, res) => {
   const { store } = req.params
-  storeController.saveState(store)
+  const { data } = req.body
+  storeController.saveState(store, data)
   res.json({ status: 200 })
 })
 
