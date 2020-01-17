@@ -1,10 +1,12 @@
 import { sync as findUpSync } from "find-up"
-import { readJSONFile } from "./fileSystem"
+import { readJSONFile, createDirectoryIfNotExistSync } from "./fileSystem"
+import { resolve } from "path"
 
 const CONFIG_FILES = ["spinal.json"]
 
 const config: IConfigObject = {
-  path: undefined,
+  path: "",
+  root: "",
   options: {
     output: "./state-storage"
   }
@@ -22,6 +24,8 @@ function extractConfig() {
     config.path = path
   }
   Object.assign(config.options, readJSONFile(config.path))
+  config.root = resolve(config.path, "..", config.options.output)
+  createDirectoryIfNotExistSync(config.root)
 }
 
 export default config

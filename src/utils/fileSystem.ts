@@ -3,7 +3,7 @@ import { resolve } from "path"
 
 export const createDirectoryIfNotExistSync = (path: string) => {
   try {
-    mkdirSync(path)
+    mkdirSync(path, { recursive: true })
   } catch (e) {
     /* Do nothing if directory exists */
   }

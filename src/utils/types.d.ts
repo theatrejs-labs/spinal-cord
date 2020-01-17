@@ -1,4 +1,7 @@
 interface IConfigObject {
-  path?: string
-  options: {}
+  path: string
+  root: string
+  options: {
+    output: string
+  }
 }
