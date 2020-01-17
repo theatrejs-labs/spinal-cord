@@ -1,8 +1,8 @@
 {
   "name": "@spinal/cli",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "bin": {
-    "spinal": "./dist/bin/www"
+    "spinal": "./dist/bin/www.js"
   },
   "scripts": {
     "start": "node ./dist/bin/www",
