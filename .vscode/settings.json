@@ -1,5 +1,18 @@
 {
   "files.exclude": {
+    "**/.git": false,
+    "**/.svn": false,
+    "**/.hg": false,
+    "**/CVS": false,
+    "**/.DS_Store": false,
+    "node_modules": false,
+    "dist": false,
+    ".*": false,
+    "package.json": false,
+    "yarn.lock": false,
+    "tsconfig.json": false
+  },
+  "explorerExclude.backup": {
     "**/.git": true,
     "**/.svn": true,
     "**/.hg": true,
@@ -11,6 +24,5 @@
     "package.json": false,
     "yarn.lock": true,
     "tsconfig.json": true
-  },
-  "explorerExclude.backup": null
+  }
 }

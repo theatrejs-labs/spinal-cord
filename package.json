@@ -1,14 +1,14 @@
 {
-  "name": "spinal-cord",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@spinal/cli",
+  "version": "0.1.0",
   "bin": {
     "spinal": "./dist/bin/www"
   },
   "scripts": {
     "start": "node ./dist/bin/www",
     "dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node --files' src/bin/www.ts",
-    "build": "./node_modules/typescript/bin/tsc"
+    "build": "./node_modules/typescript/bin/tsc",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@types/cookie-parser": "^1.4.2",
@@ -19,8 +19,7 @@
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "find-up": "^4.1.0",
-    "morgan": "~1.9.1",
-    "node-sass-middleware": "0.11.0"
+    "morgan": "~1.9.1"
   },
   "devDependencies": {
     "@types/node": "^13.1.6",
