@@ -5,8 +5,10 @@
  */
 
 import app from "../app"
-const debug = require("debug")("spinal-cord:server")
 import http from "http"
+import logger from "../utils/logger"
+import { AddressInfo } from "net"
+import chalk from "chalk"
 
 /**
  * Get port from environment and store in Express.
@@ -80,10 +82,8 @@ function onError(error: any) {
  */
 
 function onListening() {
-  const addr = server.address()
-  const bind =
-    typeof addr === "string"
-      ? "pipe " + addr
-      : "port " + (addr ? addr.port : "-")
-  debug("Listening on " + bind)
+  const addr = server.address() as AddressInfo
+  logger.success(
+    chalk`Spinal started on {yellow http://localhost:${addr.port}}`
+  )
 }
